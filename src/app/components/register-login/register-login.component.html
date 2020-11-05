@@ -1,0 +1,31 @@
+<section class="content-login">
+    <div class="content-login__container">
+        <form class="container__form">
+            <div class="form__container">
+                <fieldset class="form__header">
+                    <h2 class="login-header-title">Cadastrar login</h2>
+                    <p class="login-header-subtitle">Digite seus dados...</p>
+                </fieldset>
+
+                <fieldset class="form__input-data">
+                    <label for="nome" class="input-data__label">Nome completo: </label>
+                    <input type="text" placeholder="Digite seu nome" id="nome" class="input-style">
+
+                    <label for="email"  class="input-data__label">E-mail: </label>
+                    <input type="email" placeholder="Digite seu e-mail" id="email" class="input-style">
+               
+                    <label for="login"  class="input-data__label">Login: </label>
+                    <input type="text" placeholder="Digite seu login" id="login" class="input-style">
+                   
+                    <label for="senha"  class="input-data__label">Senha: </label>
+                    <input type="password" placeholder="Digite seu senha" id="senha" class="input-style">
+                </fieldset>
+
+                <fieldset class="form_submit">
+                    <input type="button" (click)="backLogin()" value="Voltar" class="submit_btn logar-btn">
+                    <input type="button" value="Cadastrar" class="submit_btn logar-cadastrar">
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</section>

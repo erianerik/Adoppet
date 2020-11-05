@@ -1,0 +1,40 @@
+<section class="content-login">
+   <div class="content-login__container">
+
+      <div class="container__login-header">
+      </div>
+
+      <form class="container__form" (ngSubmit)="submitForm()" [formGroup]="formLogin">
+         <div class="form__container">
+            <fieldset class="form__header">
+               <h2 class="login-header-title">Bem vindo!</h2>
+               <p class="login-header-subtitle">Faça login para continuarmos</p>
+            </fieldset>
+
+            <fieldset class="form__input-data">
+               <label for="email" class="input-data__label">E-mail: </label>
+               <input type="email" placeholder="Digite seu E-mail" id="email" class="input-style" formControlName="email">
+
+               <label for="Password" class="input-data__label">Senha: </label>
+               <input type="password" placeholder="Digite sua senha" id="password" class="input-style"
+                  formControlName="password">
+            </fieldset>
+
+            <div *ngIf="fieldsTouched('email') || fieldsTouched('password')" class="validationContainer">
+               <div *ngIf="validationFields()">
+                  <span>Email ou senha incorretos</span>
+               </div>
+            </div>
+
+            <fieldset class="form_forget-password">
+               <a routerLink="" class="forget-password">Esqueceu senha?</a>
+            </fieldset>
+
+            <fieldset class="form_submit">
+               <input type="submit" value="Logar" class="submit_btn logar-btn">
+               <input type="button" (click)="goRegister()" value="Cadastrar-se" class="submit_btn logar-cadastrar">
+            </fieldset>
+         </div>
+      </form>
+   </div>
+</section>
