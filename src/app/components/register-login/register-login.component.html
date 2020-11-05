@@ -1,31 +1,72 @@
 <section class="content-login">
-    <div class="content-login__container">
-        <form class="container__form">
-            <div class="form__container">
-                <fieldset class="form__header">
-                    <h2 class="login-header-title">Cadastrar login</h2>
-                    <p class="login-header-subtitle">Digite seus dados...</p>
-                </fieldset>
+   <div class="content-login__container">
 
-                <fieldset class="form__input-data">
-                    <label for="nome" class="input-data__label">Nome completo: </label>
-                    <input type="text" placeholder="Digite seu nome" id="nome" class="input-style">
+      <form class="container__form" (ngSubmit)="registerLogin()" [formGroup]="form">
+         <div class="form__container">
+            <fieldset class="form__header">
+               <h2 class="login-header-title">Cadastrar login</h2>
+               <p class="login-header-subtitle">Digite seus dados...</p>
+            </fieldset>
 
-                    <label for="email"  class="input-data__label">E-mail: </label>
-                    <input type="email" placeholder="Digite seu e-mail" id="email" class="input-style">
-               
-                    <label for="login"  class="input-data__label">Login: </label>
-                    <input type="text" placeholder="Digite seu login" id="login" class="input-style">
-                   
-                    <label for="senha"  class="input-data__label">Senha: </label>
-                    <input type="password" placeholder="Digite seu senha" id="senha" class="input-style">
-                </fieldset>
+            <fieldset class="form__input-data">
+               <label for="nome" class="input-data__label">Nome completo: </label>
+               <input type="text" placeholder="Digite seu nome" id="nome" class="input-style"
+                  formControlName="nomeLogin">
 
-                <fieldset class="form_submit">
-                    <input type="button" (click)="backLogin()" value="Voltar" class="submit_btn logar-btn">
-                    <input type="button" value="Cadastrar" class="submit_btn logar-cadastrar">
-                </fieldset>
-            </div>
-        </form>
-    </div>
+               <div *ngIf="fieldIndividual('nomeLogin')" class="validationContainer">
+                  <div *ngIf="getField('nomeLogin').errors.required">
+                     <span>prencha este campo!</span>
+                  </div>
+
+                  <div *ngIf="getField('nomeLogin').errors.minlength">
+                     <span>Minimo de caracteres 2!</span>
+                  </div>
+               </div>
+
+               <label for="email" class="input-data__label">E-mail: </label>
+               <input type="email" placeholder="Digite seu e-mail" id="email" class="input-style"
+                  formControlName="email">
+
+               <div *ngIf="fieldIndividual('email')" class="validationContainer">
+                  <div *ngIf="getField('email').errors.required">
+                     <span>Preencher este campo!</span>
+                  </div>
+
+                  <div *ngIf="getField('email').errors.email">
+                     <span>Informe email válido!</span>
+                  </div>
+               </div>
+
+               <label for="login" class="input-data__label">Login: </label>
+               <input type="text" placeholder="Digite seu login" id="login" class="input-style" formControlName="login">
+
+               <div *ngIf="fieldIndividual('login')" class="validationContainer">
+                  <div *ngIf="getField('login').errors.required">
+                     <span>prencha este campo!</span>
+                  </div>
+
+                  <div *ngIf="getField('login').errors.minlength">
+                     <span>Minimo de caracteres 2!</span>
+                  </div>
+               </div>
+
+               <label for="senha" class="input-data__label">Senha: </label>
+               <input type="password" placeholder="Digite seu senha" id="senha" class="input-style"
+                  formControlName="password">
+
+               <div *ngIf="fieldIndividual('password')" class="validationContainer">
+                  <div *ngIf="getField('password').errors.required">
+                     <span>Preencha este campo!</span>
+                  </div>
+               </div>
+
+            </fieldset>
+
+            <fieldset class="form_submit">
+               <input type="button" (click)="backLogin()" value="Voltar" class="submit_btn logar-btn">
+               <input type="submit" value="Cadastrar" class="submit_btn logar-cadastrar">
+            </fieldset>
+         </div>
+      </form>
+   </div>
 </section>
