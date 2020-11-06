@@ -14,15 +14,13 @@ import { ReactiveFormsModule }            from '@angular/forms'
 import { HomeComponent }                  from './components/home/home.component';
 import { LoginComponent }                 from './components/login/login.component';
 import { RegisterLoginComponent }         from './components/register-login/register-login.component';
-import { ValidationFormMessageDirective } from './directives/validation-form-message.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterLoginComponent,
-    ValidationFormMessageDirective,
+    RegisterLoginComponent
   ],
   imports: [
     BrowserModule,
