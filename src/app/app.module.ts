@@ -25,7 +25,8 @@ import { RegisterLoginComponent }         from './components/register-login/regi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
