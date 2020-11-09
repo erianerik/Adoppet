@@ -62,6 +62,10 @@
 
             </fieldset>
 
+            <div *ngIf="createUsuario" class="sucess-container">
+               <h2>Cadastro efetuado com sucesso!</h2>
+            </div>
+
             <fieldset class="form_submit">
                <input type="button" (click)="backLogin()" value="Voltar" class="submit_btn logar-btn">
                <input type="submit" value="Cadastrar" class="submit_btn logar-cadastrar">

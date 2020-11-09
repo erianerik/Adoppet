@@ -1,8 +1,10 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { ValidationForms } from 'src/app/util/validation-forms';
+import { Component, OnInit }                                from '@angular/core';
 
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators }               from '@angular/forms';
+import { Router }                                           from '@angular/router';
+import { AdopetServiceService }                             from './../../services/adopet-service.service';
+import { ValidationForms }                                  from 'src/app/util/validation-forms';
+import { Usuario }                                          from './../../model/usuario';
 
 @Component({
   selector: 'app-register-login',
@@ -12,11 +14,13 @@ import { Router } from '@angular/router';
 export class RegisterLoginComponent extends ValidationForms implements OnInit {
 
   form: FormGroup;
+  usuario: Usuario;
+  createUsuario: boolean = false;
 
   constructor(
     private _router: Router,
-    private _formBuilder: FormBuilder
-    
+    private _formBuilder: FormBuilder,
+    private _adopetService: AdopetServiceService
     ) { 
     super();
   }
@@ -40,9 +44,20 @@ export class RegisterLoginComponent extends ValidationForms implements OnInit {
 
   registerLogin() {
     event.preventDefault();
+    this.registerLoginApi();
   }
 
   backLogin() {
     this._router.navigate(["login"]);
   }
+
+  registerLoginApi() {
+    this.usuario = this.form.value;
+    this._adopetService.createUsuario(this.usuario).subscribe(() => {
+      this.createUsuario = true;
+      this.form.reset();
+    })
+    
+  }
+
 }
