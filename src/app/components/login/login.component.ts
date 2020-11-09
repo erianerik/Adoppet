@@ -36,6 +36,7 @@ export class LoginComponent extends ValidationForms implements OnInit {
    this.loginValid = this.verificationLogin(loginInput, this.users) ? true : false;
 
    if(this.loginValid) {
+     console.log("opa")
     this._router.navigate[("/homeLogada")];
    }
 
@@ -63,14 +64,17 @@ export class LoginComponent extends ValidationForms implements OnInit {
 
   getDataUsers() {
     this._adopetService.getUsuario().subscribe((data: any) =>  {
-       this.users = data;
-      } );
+      this.users = data;
+    } );
   }
 
   verificationLogin(loginInput:any , loginApi:any) {
     for (const login of loginApi) {
-      return loginInput.email == login.email && loginInput.password == login.password;
+      if(loginInput.email == login.email && loginInput.password == login.password) {
+        return true; 
+      }
     }
+    return false;
   }
 
 
