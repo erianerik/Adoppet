@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }                                          from '@angular/core';
 
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidationForms } from 'src/app/util/validation-forms';
+import { Usuario }                                                    from './../../model/usuario';
+import { AdopetServiceService }                                       from './../../services/adopet-service.service';
+import { Router }                                                     from '@angular/router';
+import { FormBuilder, FormGroup, Validators }                         from '@angular/forms';
+import { ValidationForms }                                            from 'src/app/util/validation-forms';
 
 @Component({
   selector: 'app-login',
@@ -12,21 +14,31 @@ import { ValidationForms } from 'src/app/util/validation-forms';
 export class LoginComponent extends ValidationForms implements OnInit {
 
   form: FormGroup;
+  private users:Usuario[];
+  loginValid: boolean = true;
 
   constructor(
     private _router: Router,
-    private _formBuilder: FormBuilder
-    
+    private _formBuilder: FormBuilder,
+    private _adopetService: AdopetServiceService,    
     ) {
       super();
      }
 
   ngOnInit(): void {
     this.configForm();
+    this.getDataUsers();
   }
 
   submitForm() {
-    event.preventDefault();
+   event.preventDefault();
+   let loginInput = this.form.value;
+   this.loginValid = this.verificationLogin(loginInput, this.users) ? true : false;
+
+   if(this.loginValid) {
+    this._router.navigate[("/homeLogada")];
+   }
+
   }
 
   goRegister() {  
@@ -49,6 +61,17 @@ export class LoginComponent extends ValidationForms implements OnInit {
     return  this.form.invalid;
   }
 
+  getDataUsers() {
+    this._adopetService.getUsuario().subscribe((data: any) =>  {
+       this.users = data;
+      } );
+  }
+
+  verificationLogin(loginInput:any , loginApi:any) {
+    for (const login of loginApi) {
+      return loginInput.email == login.email && loginInput.password == login.password;
+    }
+  }
 
 
 }

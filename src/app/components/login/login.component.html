@@ -13,7 +13,8 @@
 
             <fieldset class="form__input-data">
                <label for="email" class="input-data__label">E-mail: </label>
-               <input type="email" placeholder="Digite seu E-mail" id="email" class="input-style" formControlName="email">
+               <input type="email" placeholder="Digite seu E-mail" id="email" class="input-style"
+                  formControlName="email">
 
                <label for="Password" class="input-data__label">Senha: </label>
                <input type="password" placeholder="Digite sua senha" id="password" class="input-style"
@@ -24,6 +25,10 @@
                <div *ngIf="validationFields()">
                   <span>Email ou senha incorretos</span>
                </div>
+            </div>
+
+            <div *ngIf="!loginValid" class="validationContainer">
+               <span>Email ou senha invalidos</span>
             </div>
 
             <fieldset class="form_forget-password">
