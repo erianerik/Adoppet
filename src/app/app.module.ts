@@ -14,13 +14,15 @@ import { ReactiveFormsModule }            from '@angular/forms'
 import { HomeComponent }                  from './components/home/home.component';
 import { LoginComponent }                 from './components/login/login.component';
 import { RegisterLoginComponent }         from './components/register-login/register-login.component';
+import { SearchPetComponent }             from './components/search-pet/search-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterLoginComponent
+    RegisterLoginComponent,
+    SearchPetComponent
   ],
   imports: [
     BrowserModule,

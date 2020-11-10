@@ -1,0 +1,20 @@
+<form class="search-form" [formGroup]="formSearch">
+
+    <select class="select-style background pet"  formControlName="chosePet">
+        <option selected>Pet</option>
+    </select>
+
+    <select class="select-style background age" formControlName="choseAge">
+        <option class="age" selected>Idade</option>
+    </select>
+
+    <select class="select-style background gender" formControlName="choseGender">
+        <option class="gender" selected>Sexo</option>
+    </select>
+
+    <select class="select-style background city" formControlName="ChoseCity">
+        <option class="city" selected>Cidade</option>
+    </select>
+
+    <input type="submit" value="Pesquisar" class="btn-search">
+</form>
