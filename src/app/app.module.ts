@@ -15,6 +15,7 @@ import { HomeComponent }                  from './components/home/home.component
 import { LoginComponent }                 from './components/login/login.component';
 import { RegisterLoginComponent }         from './components/register-login/register-login.component';
 import { SearchPetComponent }             from './components/search-pet/search-pet.component';
+import { SearchPetHomeComponent } from './components/search-pet-home/search-pet-home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchPetComponent }             from './components/search-pet/search-p
     HomeComponent,
     LoginComponent,
     RegisterLoginComponent,
-    SearchPetComponent
+    SearchPetComponent,
+    SearchPetHomeComponent
   ],
   imports: [
     BrowserModule,

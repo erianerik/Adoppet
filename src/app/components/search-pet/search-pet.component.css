@@ -1,7 +1,7 @@
 .search-form {
     width: 80%;
     height: 3rem;
-    margin: 5% auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
 
 .select-style {
     box-sizing: border-box;
-    width: 20%;
+    width: 100%;
     height: 100%;
     padding-left: 2.5rem;
     font-size: 1.1rem;
@@ -22,9 +22,21 @@
 }
 
 .background {
-    background-size: 13%;
-    background-position: 5% 50%;
+    background-size: 10%;
+    background-position: 3% 50%;
     background-repeat: no-repeat;
+}
+
+.btn-search {
+    width: 30%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #7f9ec7;
+    font-weight: 600;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .pet {
@@ -42,19 +54,3 @@
 .city {
     background-image: url(../../../assets/img/icones-search/city.svg);
 } 
-
-.btn-search {
-    width: 12%;
-    height: 100%;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    background-color: #7f9ec7;
-    font-weight: 600;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    background-image: url(../../../assets/img/icones-search/missing.svg);
-    background-size: 25%;
-    background-position: 90% center;
-    background-repeat: no-repeat;
-}

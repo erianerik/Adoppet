@@ -34,12 +34,8 @@ export class LoginComponent extends ValidationForms implements OnInit {
    event.preventDefault();
    let loginInput = this.form.value;
    this.loginValid = this.verificationLogin(loginInput, this.users) ? true : false;
-
-   if(this.loginValid) {
-     console.log("opa")
-    this._router.navigate[("/homeLogada")];
-   }
-
+   
+   if(this.loginValid) this._router.navigate(["homeLogada"]);
   }
 
   goRegister() {  
