@@ -1,13 +1,13 @@
 .main-search {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 7%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(../../../assets/img/background-search-home.png);
-    background-size: 60%;
-    background-position: 85% 90%;
+    background-size: 55%;
+    background-position: 90% 90%;
     background-repeat: no-repeat;
 }
 
@@ -40,8 +40,9 @@
 }
 
 .header-content--img-pet {
-    width: 80%;
+    width: 60%;
     height: 100%;
+    justify-self: center;
 }
 
 search-pet {
