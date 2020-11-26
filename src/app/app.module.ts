@@ -14,7 +14,9 @@ import { ReactiveFormsModule }            from '@angular/forms'
 import { HomeComponent }                  from './components/home/home.component';
 import { LoginComponent }                 from './components/login/login.component';
 import { RegisterLoginComponent }         from './components/register-login/register-login.component';
-import { ValidationFormMessageDirective } from './directives/validation-form-message.directive';
+import { SearchPetComponent }             from './components/search-pet/search-pet.component';
+import { SearchPetHomeComponent } from './components/search-pet-home/search-pet-home.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,15 @@ import { ValidationFormMessageDirective } from './directives/validation-form-mes
     HomeComponent,
     LoginComponent,
     RegisterLoginComponent,
-    ValidationFormMessageDirective,
+    SearchPetComponent,
+    SearchPetHomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
